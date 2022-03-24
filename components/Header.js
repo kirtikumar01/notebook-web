@@ -1,0 +1,34 @@
+import { PlusCircleIcon, SearchIcon } from '@heroicons/react/outline';
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom"
+
+function Header() {
+
+    const [open, setOpen] = useRecoilState(modalState);
+
+  return (
+    <div className="shadow-sm border-b bg-white sticky top-0 z-50">
+      <div className="flex justify-between bg-white max-w-6xl mx-5 xl:mx-auto">
+          {/* left side */}
+          <div className="relative w-16 contain cursor-pointer p-4">
+              <img src="./notebook-logo.png" alt=""/>
+          </div>
+          {/* mi */}
+            {/* <div className="max-w-xs">
+                <div className="mt-1 relative p-3 rounded-md">
+                    <div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none">
+                        <SearchIcon className="h-5 w-5 text-gray-500" />
+                    </div>
+                    <input className="bg-gray-50 block w-full pl-10 sm:text-sm border-gray-300 focus:ring-black focus:border-black rounded-md" type="text" placeholder="search"/>
+                </div>
+            </div> */}
+            {/* right */}
+            <div className="flex items-center justify-end space-x-4">
+                <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Header

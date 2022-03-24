@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .navBtn{
+        @apply h-6 cursor-pointer hover:scale-125 transition-all ease-out duration-150;
+    }
+    .icon{
+        @apply cursor-pointer w-9 h-9 hover:bg-[#1d9bf0] hover:bg-opacity-10 flex items-center justify-center
+        rounded-full transition ease-out;
+    }
+}
